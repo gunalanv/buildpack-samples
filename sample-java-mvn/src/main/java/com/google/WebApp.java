@@ -12,14 +12,14 @@ public class WebApp {
         HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
 
         server.createContext("/", handler -> {
-            byte[] response = "hello, world".getBytes();
+            byte[] response = "hello, world v2 ".getBytes();
             handler.sendResponseHeaders(200, response.length);
             try (OutputStream os = handler.getResponseBody()) {
                 os.write(response);
             }
         });
 
-        System.out.println("Listening at http://localhost:" + port);
+        System.out.println("Listening (v2) at http://localhost:" + port);
 
         server.start();
     }
